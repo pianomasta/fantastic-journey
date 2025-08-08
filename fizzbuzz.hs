@@ -23,7 +23,7 @@ fuzzies 47 = "Dooz"
 
 -- These are your nobs.
 nobs :: [Int]
-nobs = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41]
+nobs = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
 fizzbuzz :: Int -> String
 fizzbuzz n
   | [] == proto = show n
