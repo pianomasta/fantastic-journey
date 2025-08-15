@@ -18,7 +18,7 @@ format (Cat "root" w) = concat (map format w)
 format (Cat name w) =
   name ++ ":\n" ++
   (unlines . map (replicate indent ' ' ++) . lines) (concat (map format w))
-format (Node name) = name
+format (Node name) = name ++ "\n"
 
 browse :: Wikiwiki -> IO ()
 browse root@(Cat "root" w) = browse1 [] root
