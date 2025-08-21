@@ -37,10 +37,10 @@ valide (filo, rango) = valide1 filo && valide1 rango
   where valide1 a = 1 <= a && a < 9
 
 visualisar :: [Position] -> IO ()
-visualisar = putStr . visualisar' [(a, b) | a <- [8, 7 .. 1], b <- [1 .. 8]]
+visualisar = putStr . visualisar' [(a, b) | b <- [8, 7 .. 1], a <- [1 .. 8]]
 visualisar' pada pos
-  | [(1, 8)] <- pada = check (1, 8) pos : '8' : '\n' : "abcdefgh\n"
-  | (a, 8) : pada <- pada = check (a, 8) pos : ((head . show) a) : '\n' : visualisar' pada pos
+  | [(8, 1)] <- pada = check (8, 1) pos : '1' : '\n' : "abcdefgh\n"
+  | (8, b) : pada <- pada = check (8, b) pos : ((head . show) b) : '\n' : visualisar' pada pos
   | (a, b) : pada <- pada = check (a, b) pos : visualisar' pada pos
   where check pos1 pos = if elem pos1 pos then 'x' else ' '
 
